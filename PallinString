@@ -1,0 +1,36 @@
+public class Solution {
+     public int isPalindrome(String A) {
+        
+        // int len = A.length(), start = 0, end = len-1;
+        
+        // while(start <= end){
+        //     if(!isAlphanumeric(A.charAt(start)))
+        //       start++;
+        //     else
+        //     if(!isAlphanumeric(A.charAt(end)))
+        //       end--;
+        //     else
+        //     if(Character.toLowerCase(A.charAt(start)) != 
+        //       Character.toLowerCase(A.charAt(end)))
+        //       return 0;
+        //     else{
+        //         start++;
+        //         end--;
+        //     }
+        // }
+        
+        // return 1;
+        A = A.replaceAll("[^a-zA-Z0-9]", "");
+
+    StringBuilder sb = new StringBuilder(A);
+    String s = sb.reverse().toString();
+       
+    return (A.equalsIgnoreCase(s)) ? 1 : 0 ;
+        
+    }
+    
+    // public boolean isAlphanumeric(char c){
+    //     return Character.isDigit(c) || Character.isLetter(c);
+    // }
+}
+    
