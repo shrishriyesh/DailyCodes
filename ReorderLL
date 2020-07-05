@@ -1,0 +1,29 @@
+public class Solution
+{
+public ListNode reorderList(ListNode A) {
+    if(A==null)
+    return A;
+    
+    ListNode slow=A,fast=A;
+    while(fast!=null && fast.next!=null && slow!=null){
+        slow=slow.next;
+        fast=fast.next.next;
+    }
+    
+    ListNode rev=reverse(slow.next);
+    slow.next=null;
+    ListNode temp = A;
+    while(rev!=null){
+        ListNode next=temp.next;
+        temp.next = rev;
+        temp=next;
+        if(temp==null)
+        break;
+        next=rev.next;
+        rev.next=temp;
+        rev=next;
+    }
+    
+    return A;
+  }
+  }
